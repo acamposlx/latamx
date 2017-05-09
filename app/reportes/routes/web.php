@@ -15,7 +15,10 @@ Route::get('/', [
 'uses' => 'LoginController@index',
 'as' => 'login.index'
 ]);
-
+Route::get('/uso', [
+'uses' => 'ConsignatarioController@consignatario_uso',
+'as' => 'consignatarios.uso'
+]);
 
 Route::get('/reporteconsignatario', [
 'uses' => 'ConsignatarioController@index',
