@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title ng-bind="'Fastr - ' + details.Title"></title>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+
+<div class="container" ng-app="myApp" ng-controller="MovieController">
+  
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+        <input type="text" class="form-control" placeholder="Buscar" ng-model="search">
+      </div>      
+    </div>
+  </form>
+  
+  <table class="table table-bordered table-striped">
+    
+    <thead>
+      <tr>
+        <td>
+          <a href="#" ng-click="sortType = 'id_ciudad'; sortReverse = !sortReverse">
+            Id Ciudad
+            <span ng-show="sortType == 'id_ciudad' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'id_ciudad' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'ciudad'; sortReverse = !sortReverse">
+          Ciudad
+            <span ng-show="sortType == 'ciudad' && !sortReverse" class="fa fa-caret-down"></span>
+            <span ng-show="sortType == 'ciudad' && sortReverse" class="fa fa-caret-up"></span>
+          </a>
+        </td>
+       
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="datos in related | orderBy:sortType:sortReverse | filter:search">
+        <td>{{ datos.id_ciudad }}</td>
+        <td>{{ datos.ciudad }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <script src="js/angular.min.js"></script>
+    <script src="js/app.js"></script>

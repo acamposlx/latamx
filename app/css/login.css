@@ -1,0 +1,108 @@
+html {
+	background-color: #013854;
+	background-size: cover;
+}
+.spiffy {
+	display: block;
+	width: 35%;
+}
+.spiffy * {
+	display: block;
+	height: 1px;
+	overflow: hidden;
+	font-size: .01em;
+	background-color: #fff;
+	opacity: 0.5;
+}
+.spiffyInterna * {
+	display: block;
+	height: 1px;
+	overflow: hidden;
+	font-size: .01em;
+	background-color: #fff;
+	opacity: 0.2;
+}
+.spiffy1 {
+	margin-left: 3px;
+	margin-right: 3px;
+	padding-left: 1px;
+	padding-right: 1px;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	background: #3f3f3f;
+	opacity: 0.5;
+}
+.spiffy2 {
+	margin-left: 1px;
+	margin-right: 1px;
+	padding-right: 1px;
+	padding-left: 1px;
+	border-left: 1px solid #fff;
+	border-right: 1px solid #fff;
+	background: #303030;
+	opacity: 0.5;
+}
+.spiffy3 {
+	margin-left: 1px;
+	margin-right: 1px;
+	border-left: 1px solid #303030;
+	border-right: 1px solid #303030;
+}
+.spiffy4 {
+	border-left: 1px solid #919191;
+	border-right: 1px solid #919191
+}
+.spiffy5 {
+	border-left: 1px solid #3f3f3f;
+	border-right: 1px solid #3f3f3f
+}
+.spiffyfg {
+	background: #fff;
+	opacity: 0.9;
+	width: 35%;
+}
+.spiffyfgInterna {
+	background: #000000;
+	opacity: 0.2;
+	width: 35%;
+}
+.TextoTitulo {
+	font-family: "Calibri";
+	font-size: 24px;
+	color: #000;
+}
+.TextoTitulo2 {
+	padding-left: 15%;
+	padding-top: 10px;
+	font-family: "Calibri";
+	font-size: 16px;
+	color: #000;
+}
+.TextoTitulo3 {
+	padding-right: 20%;
+	padding-top: 20px;
+	padding-bottom:30px;
+	font-family: "Calibri";
+	font-size: 16px;
+	color: #000;
+}
+input[type="password"] {
+	width: 75%;
+}
+input[type="text"] {
+	width: 75%;
+}
+img {
+	max-width: 100%;
+	display: block;
+	height: auto;
+}
+input[type=submit]
+{
+  background-color: #0059ba; 
+}
+
+input[type=submit]:hover
+{
+  background-color: #46000D
+}
