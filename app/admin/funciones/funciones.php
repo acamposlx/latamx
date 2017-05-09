@@ -235,7 +235,7 @@ function insertaReceiptStephy($receipt, $date, $shipperid, $shipper, $consigneei
 }
 
 function insertaReceipt($receipt, $date, $shipperid, $shipper, $consigneeid, $consignee, $agentid, $agent, $pieces, $weight, $volume, $weightvol, $itemdescription, $notes, $countryid, $instrucciones, $entregado, $embarcado, $servicio, $documento, $reempacado){
-	include('../admin/conexion.php');
+	include('admin/conexion.php');
 	$sqlI = "insert into receipts (receipt, date, shipperid, shipper, consigneeid, consignee, agentid, agent, pieces, weight, volume, weightvol, itemdescription, notes, countryid, instrucciones, entregado, embarcado, servicio, documento, reempacado) VALUES ('".$receipt."', '".$date."', '".$shipperid."', '".$shipper."', '".$consigneeid."', '".$consignee."', '".$agentid."', '".$agent."', '".$pieces."', '".$weight."', '".$volume."', '".$weightvol."', '".$itemdescription."', '".$notes."', '".$countryid."', 0, 0, 0, 0, 0, 0)";
 	if ($conn->query($sqlI) === TRUE) {
 		} else {

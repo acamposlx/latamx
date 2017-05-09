@@ -5,7 +5,12 @@ include('admin/funciones/funciones.php');
 include('admin/funciones/funciones_servicios.php');
 include('admin/funciones/funciones_comunes.php');
 //echo "cargar nuevos receipts";
-$datosreceipts = receipts($_SESSION['ConsigneeCode'], "01/01/2017", "02/28/2017");
+
+
+
+$fecha = date('m/j/Y');
+
+$datosreceipts = receipts($_SESSION['ConsigneeCode'], "01/01/2017", $fecha);
 
 
 foreach($datosreceipts as $objeto){
