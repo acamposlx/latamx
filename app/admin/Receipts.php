@@ -65,7 +65,7 @@ if(is_XML($array["WSGetReceiptsResult"])){
 
 			$sqlI = "insert into receipts (receipt, date, shipperid, shipper, consigneeid, consignee, agentid, agent, pieces, weight, volume, weightvol, itemdescription, notes, countryid, instrucciones, entregado, embarcado, servicio, documento, reempacado) VALUES ('".$obj['Receipt']."', '".$obj['Date']."', '".$obj['ShipperID']."', '".$obj['Shipper']."', '".$obj['ConsigneeID']."', '".$obj['Consignee']."', '".$agenteid."', '".$obj['Agent']."', '".$obj['Pieces']."', '".$weight."', '".$volume."', '".$weightvol."', '".$obj['ItemDescription']."', '".$obj['Notes']."', '".$obj['CountryID']."', 0, 0, 0, 0, 0, 0)";
 			if ($conn->query($sqlI) === TRUE) {
-    			echo "New record created successfully";
+    			echo "New record created successfully" .$obj['Receipt'];
     			echo "<br>"; 
 			} else {
     			echo "Error: " . $sqlI . "<br>" . $conn->error;

@@ -1,7 +1,7 @@
 <?php
 include('conexion.php');
 include('../servicios/WSGetShippingInstruction.php');
-$sql = "SELECT * FROM receipts WHERE receipts.consigneeid = 2798 ORDER BY receipts.receipt DESC";
+$sql = "SELECT * FROM receipts WHERE instrucciones = 0";
 $resultado = $conn->query($sql);
 function is_XML($xml) {
     $doc = @simplexml_load_string($xml);
@@ -20,7 +20,7 @@ if ($resultado->num_rows > 0) {
 	}
 	for($i = 0; $i < $resultado->num_rows; $i += 20)
 	{
-		$select = "SELECT * FROM receipts WHERE receipts.consigneeid = 2798 ORDER BY receipts.receipt DESC limit " .$i. ", 20";
+		$select = "SELECT * FROM receipts WHERE instrucciones = 0 limit " .$i. ", 20";
 		$resultado2 = $conn->query($select);
 		if ($resultado2->num_rows > 0) {
 			while($row2 = $resultado2->fetch_assoc()) {
@@ -30,8 +30,17 @@ if ($resultado->num_rows > 0) {
 				//echo "string".$resultado3->num_rows;
 				if ($resultado3->num_rows == 0) {
 					$instru = instruccion($row2["receipt"], '');
+if ($instru['Code'] != ""){
+echo $instru['Code'] ."-" .$instru['Type'];
+	echo "<br>";
+
+
+
+					
 					$sqlI = "insert into instructions (code, author, type, insurance, insuranceammount, payment, receipt) VALUES ('".$instru['Code']."', '".$instru['Author']."', '".$instru['Type']."', '".$instru['Insurance']."', '".$instru['InsuranceAmount']."', '".$instru['Payment']."', '".$row2["receipt"]."')";
   					if ($conn->query($sqlI) === TRUE) {
+  						echo "receipt actualizado " .$row2["receipt"];
+  						echo "<br>";
   					} else {
       					echo "Error: " . $sqlI . "<br>" . $conn->error;
   					}
@@ -40,6 +49,8 @@ if ($resultado->num_rows > 0) {
   					} else {
       					echo "Error updating record: " . $conn->error;
   					}
+  					
+  				}	
 				}
 			}
 		}

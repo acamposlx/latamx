@@ -50,12 +50,6 @@
 
     <div class="container">
 
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Modulo de Reportes</h1>
-        <p>MOdulo de Reportes
-        </p>
-      </div>
 	@yield('content')
     </div> <!-- /container -->
 

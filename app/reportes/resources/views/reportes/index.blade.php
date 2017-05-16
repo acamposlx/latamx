@@ -1,6 +1,13 @@
 @extends('template')
 @section('content')
 {!! Form::open(['route'=>'consignatarios.filtro']) !!}
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Modulo de Reportes</h1>
+        <p>Reporte de Consignatarios Registrados por rango de fecha
+        </p>
+      </div>
 <div class="row">
 	<div class="col-md-2">Fecha de Inicio</div>
 	<div class="col-md-2">
